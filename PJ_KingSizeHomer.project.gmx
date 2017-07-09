@@ -8,25 +8,28 @@
   <sprites name="sprites">
     <sprite>sprites\spr_Homer</sprite>
     <sprite>sprites\spr_doughnut</sprite>
+    <sprite>sprites\spr_obstacle</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <scripts name="The other mode">
-      <scripts name="Objects">
-        <script>scripts\lvl_controller_create.gml</script>
+    <scripts name="Objects">
+      <script>scripts\lvl_controller_create.gml</script>
+      <script>scripts\obstacle_parent_create.gml</script>
+      <script>scripts\obstacle_type_set_up.gml</script>
+      <script>scripts\obstacle_update.gml</script>
+      <script>scripts\obstacle_draw.gml</script>
+    </scripts>
+    <scripts name="Homer">
+      <scripts name="states">
+        <script>scripts\event_received.gml</script>
       </scripts>
-      <scripts name="Homer">
-        <scripts name="states">
-          <script>scripts\event_received.gml</script>
-        </scripts>
-        <script>scripts\homer_create_1.gml</script>
-        <script>scripts\update_lane_pos.gml</script>
-      </scripts>
-      <scripts name="Control">
-        <script>scripts\stablish_lanes.gml</script>
-        <script>scripts\lane.gml</script>
-      </scripts>
+      <script>scripts\homer_create_1.gml</script>
+      <script>scripts\update_lane_pos.gml</script>
+    </scripts>
+    <scripts name="Control">
+      <script>scripts\stablish_lanes.gml</script>
+      <script>scripts\lane.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -34,19 +37,22 @@
     <object>objects\obj_Homer</object>
     <object>objects\obj_control</object>
     <object>objects\obj_doughnut</object>
+    <object>objects\obj_obstacle_parent</object>
+    <object>objects\obj_obstacle</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\rm_test</room>
   </rooms>
-  <constants number="8">
-    <constant name="EVENT_UP">10</constant>
+  <constants number="9">
+    <constant name="DOWN">1</constant>
+    <constant name="UP">-1</constant>
     <constant name="EVENT_DOWN">9</constant>
     <constant name="EVENT_HURT">8</constant>
-    <constant name="STATE_CHANGING_LANE">-8</constant>
-    <constant name="STATE_HURT">-9</constant>
-    <constant name="STATE_FLYING">-10</constant>
-    <constant name="UP">-1</constant>
-    <constant name="DOWN">1</constant>
+    <constant name="EVENT_UP">10</constant>
+    <constant name="WALL">11</constant>
+    <constant name="STRAIGHT_LINE">12</constant>
+    <constant name="SIN_WAVE">13</constant>
+    <constant name="JUMPING">14</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
