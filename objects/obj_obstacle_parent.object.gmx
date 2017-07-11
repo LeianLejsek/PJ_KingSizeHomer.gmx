@@ -173,7 +173,7 @@
           <argument>
             <kind>1</kind>
             <string>with( other ) {
-    instance_destroy();
+    event_received( EVENT_HURT );
 }
 </string>
           </argument>

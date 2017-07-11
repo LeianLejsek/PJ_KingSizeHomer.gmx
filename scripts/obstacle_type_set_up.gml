@@ -58,7 +58,7 @@ enum JumpingState {
 }
 
 state = JumpingState.JUMPING_UP;
-target_lane = lane( choose(0, 1, 2) );
+target_lane = irandom( global.lanes - 1 );
 y = room_height + sprite_height;
 
 

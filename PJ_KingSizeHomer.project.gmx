@@ -26,9 +26,10 @@
       </scripts>
       <script>scripts\homer_create_1.gml</script>
       <script>scripts\update_lane_pos.gml</script>
+      <script>scripts\homer_update.gml</script>
     </scripts>
     <scripts name="Control">
-      <script>scripts\stablish_lanes.gml</script>
+      <script>scripts\control_create.gml</script>
       <script>scripts\lane.gml</script>
     </scripts>
   </scripts>
@@ -43,11 +44,17 @@
   <rooms name="rooms">
     <room>rooms\rm_test</room>
   </rooms>
-  <constants number="9">
+  <constants number="15">
+    <constant name="LEFT">-1</constant>
+    <constant name="RIGHT">1</constant>
     <constant name="DOWN">1</constant>
     <constant name="UP">-1</constant>
+    <constant name="EVENT_HURT">4</constant>
+    <constant name="EVENT_LEFT_RELEASED">5</constant>
+    <constant name="EVENT_RIGHT_RELEASED">6</constant>
+    <constant name="EVENT_LEFT_PRESSED">7</constant>
+    <constant name="EVENT_RIGHT_PRESSED">8</constant>
     <constant name="EVENT_DOWN">9</constant>
-    <constant name="EVENT_HURT">8</constant>
     <constant name="EVENT_UP">10</constant>
     <constant name="WALL">11</constant>
     <constant name="STRAIGHT_LINE">12</constant>

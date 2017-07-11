@@ -2,13 +2,13 @@
 var event = argument0;
 
 switch state {
-    case STATE_FLYING:
+    case HomerStates.STATE_FLYING:
         state_flying( event );
     break;
-    case STATE_HURT:
+    case HomerStates.STATE_HURT:
         state_hurt( event );
     break;
-    case STATE_CHANGING_LANE:
+    case HomerStates.STATE_CHANGING_LANE:
         state_changing_lane( event );
     break;
     default:
@@ -27,10 +27,18 @@ switch event {
     case EVENT_DOWN:
         update_lane_pos( DOWN );
     break;
-    case EVENT_HURT:
+    case EVENT_LEFT_PRESSED:
+        impulse_vector = LEFT;
     break;
-    default:
-        show_debug_message("Event not defined");
+    case EVENT_RIGHT_PRESSED:
+        impulse_vector = RIGHT;
+    break;
+    case EVENT_LEFT_RELEASED:
+    case EVENT_RIGHT_RELEASED:
+        impulse_vector = 0;
+    break;
+    case EVENT_HURT:
+        instance_destroy();
     break;
 }
 

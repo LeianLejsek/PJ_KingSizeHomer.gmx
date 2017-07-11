@@ -30,7 +30,7 @@ y = lane(lane_pos) + sin( x / wave_length + rnd_start ) * wave_amplitude;
 #define jumping_update
 switch state {
     case JumpingState.JUMPING_UP:
-        if( y > target_lane ) {
+        if( y > lane( target_lane ) ) {
             y -= jump_speed;
         } else {
             state = JumpingState.SUSPENDED;
@@ -57,7 +57,7 @@ switch state {
             timer--;
         } else {
             state = JumpingState.JUMPING_UP;
-            target_lane = lane( choose(0, 1, 2) );
+            target_lane = irandom( global.lanes - 1 );
         }
     break; 
     default:

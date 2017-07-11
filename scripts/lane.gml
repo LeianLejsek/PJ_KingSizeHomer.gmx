@@ -1,6 +1,4 @@
 //Returns y pos of any lane
 var next_lane = argument0;
 
-var border = global.lane_spacing / 2;
-
-return( next_lane * global.lane_spacing + border ); 
+return( global.playspace_y + next_lane * global.lane_spacing + global.border ); 
