@@ -13,8 +13,9 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <scripts name="Objects">
+    <scripts name="Obstacle">
       <script>scripts\lvl_controller_create.gml</script>
+      <script>scripts\spawn_obstacle.gml</script>
       <script>scripts\obstacle_parent_create.gml</script>
       <script>scripts\obstacle_type_set_up.gml</script>
       <script>scripts\obstacle_update.gml</script>

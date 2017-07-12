@@ -15,6 +15,9 @@ switch type {
     default:
     break;
 }
+if ( x < 0 ) {
+    instance_destroy();
+}
 
 #define wall_update
 x -= h_speed;
@@ -64,4 +67,4 @@ switch state {
     break;
 }
 
-x -= global.lvl_speed;
+x -= h_speed;

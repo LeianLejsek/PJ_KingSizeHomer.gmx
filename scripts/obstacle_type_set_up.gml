@@ -63,7 +63,7 @@ y = room_height + sprite_height;
 
 
 sprite_index = spr_obstacle;
-h_spd = global.lvl_speed;
+h_speed = global.lvl_speed;
 
 jump_speed = 25;
 fall_speed = 30;
