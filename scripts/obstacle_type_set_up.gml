@@ -46,7 +46,7 @@ wave_amplitude = global.lane_spacing/2;
 
 rnd_start = irandom( 500 ); //set when created to make many that follow the same curve
 
-lane_pos = irandom( 4 );
+lane_pos = irandom( global.lanes - 1 );
 y = lane( lane_pos );
 
 #define jumping_set_up
