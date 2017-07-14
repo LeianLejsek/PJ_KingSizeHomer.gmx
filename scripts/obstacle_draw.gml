@@ -15,10 +15,7 @@ switch type {
 }
 
 #define wall_draw
-//define scale
-x_scale = ( global.lane_spacing * size_w )/sprite_width;
-y_scale = ( global.lane_spacing * size_h )/sprite_height;
-draw_sprite_ext( sprite_index, image_index, x, y, x_scale, y_scale, 0, c_white, 1 );
+draw_self();
 
 #define straight_line_draw
 draw_self();

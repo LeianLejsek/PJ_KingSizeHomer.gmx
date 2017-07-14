@@ -30,6 +30,10 @@ if( lane_pos = UP ) {
     y = room_height - ( global.lane_spacing * size_h )/2;
 }
 
+image_xscale = ( global.lane_spacing * size_w )/sprite_width;
+image_yscale = ( global.lane_spacing * size_h )/sprite_height;
+
+
 
 #define straight_line_set_up
 sprite_index = spr_obstacle;
