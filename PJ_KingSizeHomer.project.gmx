@@ -9,6 +9,7 @@
     <sprite>sprites\spr_Homer</sprite>
     <sprite>sprites\spr_doughnut</sprite>
     <sprite>sprites\spr_obstacle</sprite>
+    <sprite>sprites\spr_pingu</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
