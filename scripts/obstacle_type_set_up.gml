@@ -38,7 +38,6 @@ image_yscale = ( global.lane_spacing * size_h )/sprite_height;
 #define straight_line_set_up
 sprite_index = spr_obstacle;
 h_speed = global.lvl_speed;
-lane_pos = irandom(4);
 y = lane( lane_pos );
 
 #define sin_wave_set_up
@@ -50,8 +49,8 @@ wave_amplitude = global.lane_spacing/2;
 
 rnd_start = irandom( 500 ); //set when created to make many that follow the same curve
 
-lane_pos = irandom( global.lanes - 1 );
-y = lane( lane_pos );
+
+
 
 #define jumping_set_up
 enum JumpingState {
@@ -62,7 +61,7 @@ enum JumpingState {
 }
 
 state = JumpingState.JUMPING_UP;
-target_lane = irandom( global.lanes - 1 );
+target_lane = lane_pos;
 y = room_height + sprite_height;
 
 
