@@ -13,7 +13,10 @@
     <sprite>sprites\spr_asteroid</sprite>
     <sprite>sprites\spr_asteroid_big</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bckgr_space</background>
+    <background>background\bckgr_stars</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Obstacle">

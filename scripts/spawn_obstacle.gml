@@ -9,7 +9,7 @@ with ( current_obstacle ) {
         other.spawn_timer_max = 20;
     } else {
         other.spawn_timer_min = 5;
-        other.spawn_timer_max = 12;
+        other.spawn_timer_max = 10;
     }
     obstacle_type_set_up( type );
 }

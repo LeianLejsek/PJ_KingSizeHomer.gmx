@@ -6,6 +6,8 @@ spawn_timer_max = 10;
 
 initialize_rng_lane_values();
 
+background_hspeed[ 0 ] = -2;
+
 alarm[0] = 30;
 
 
