@@ -5,11 +5,11 @@ current_obstacle.lane_pos = current_lane;
 with ( current_obstacle ) {
     type = choose( WALL, STRAIGHT_LINE, SIN_WAVE, JUMPING );
     if( type = WALL ){
-        other.spawn_timer_min = 20;
-        other.spawn_timer_max = 25;
+        other.spawn_timer_min = 15;
+        other.spawn_timer_max = 20;
     } else {
         other.spawn_timer_min = 5;
-        other.spawn_timer_max = 15
+        other.spawn_timer_max = 12;
     }
     obstacle_type_set_up( type );
 }

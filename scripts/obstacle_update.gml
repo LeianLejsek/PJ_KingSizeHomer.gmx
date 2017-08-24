@@ -15,7 +15,7 @@ switch type {
     default:
     break;
 }
-if ( x < 0 ) {
+if ( x < -abs( sprite_width/2 ) ) {
     instance_destroy();
 }
 
@@ -48,7 +48,7 @@ switch state {
         }
     break;
     case JumpingState.FALLING:
-        if( y < room_height + sprite_height ) {
+        if( y < room_height + abs( sprite_height ) ) {
             y += fall_speed;
         } else {
             state = JumpingState.RECOVERY;

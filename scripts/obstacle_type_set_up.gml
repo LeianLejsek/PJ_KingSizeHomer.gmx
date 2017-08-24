@@ -17,7 +17,9 @@ switch type {
 }
 
 #define wall_set_up
-sprite_index = spr_obstacle;
+sprite_index = spr_asteroid_big;
+image_speed = 0;
+image_index = irandom( image_number - 1 );
 h_speed = global.lvl_speed;
 //size in lane separation units
 size_w = 1;
@@ -30,22 +32,34 @@ if( lane_pos = UP ) {
     y = room_height - ( global.lane_spacing * size_h )/2;
 }
 
-image_xscale = ( global.lane_spacing * size_w )/sprite_width;
-image_yscale = ( global.lane_spacing * size_h )/sprite_height;
+image_xscale = ( global.lane_spacing * size_w )/sprite_width * choose( RIGHT, LEFT );
+image_yscale = ( global.lane_spacing * size_h )/sprite_height * choose( UP, DOWN );
 
 
 
 #define straight_line_set_up
-sprite_index = spr_obstacle;
+sprite_index = spr_asteroid;
+image_speed = 0;
+image_index = irandom( image_number - 1 );
 h_speed = global.lvl_speed;
 y = lane( lane_pos );
+size = irandom_range( 32, 64 );
+image_xscale = size/sprite_width * choose( RIGHT, LEFT );
+image_yscale = size/sprite_height * choose( UP, DOWN );
+
 
 #define sin_wave_set_up
-sprite_index = spr_obstacle;
+sprite_index = spr_asteroid;
+image_speed = 0;
+image_index = irandom( image_number - 1 );
 h_speed = global.lvl_speed;
 //wave properties
 wave_length = global.lane_spacing;
 wave_amplitude = global.lane_spacing/2;
+
+size = irandom_range( 32, 64 );
+image_xscale = size/sprite_width * choose( RIGHT, LEFT );
+image_yscale = size/sprite_height * choose( UP, DOWN );
 
 rnd_start = irandom( 500 ); //set when created to make many that follow the same curve
 
@@ -65,7 +79,13 @@ target_lane = lane_pos;
 y = room_height + sprite_height;
 
 
-sprite_index = spr_obstacle;
+sprite_index = spr_asteroid;
+image_speed = 0;
+image_index = irandom( image_number - 1 );
+size = irandom_range( 32, 64 );
+image_xscale = size/sprite_width * choose( RIGHT, LEFT );
+image_yscale = size/sprite_height * choose( UP, DOWN );
+
 h_speed = global.lvl_speed;
 
 jump_speed = 25;

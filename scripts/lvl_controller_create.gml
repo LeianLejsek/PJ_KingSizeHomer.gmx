@@ -1,8 +1,8 @@
 global.lvl_speed = 15;
-max_rng_range = 48;
-rng_offset = 4;
+max_rng_range = 100;
+rng_offset = 5;
 spawn_timer_min = 5;
-spawn_timer_max = 15;
+spawn_timer_max = 10;
 
 initialize_rng_lane_values();
 

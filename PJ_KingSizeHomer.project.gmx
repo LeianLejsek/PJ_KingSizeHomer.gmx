@@ -10,6 +10,8 @@
     <sprite>sprites\spr_doughnut</sprite>
     <sprite>sprites\spr_obstacle</sprite>
     <sprite>sprites\spr_pingu</sprite>
+    <sprite>sprites\spr_asteroid</sprite>
+    <sprite>sprites\spr_asteroid_big</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
