@@ -15,8 +15,7 @@ animation_flash_cycle = 2;
 
 impulse_vector = 0;
 normal_h_speed = 10;
-hurt_shock_h_speed = -.1;
-hurt_recovery_h_speed = 7;
+hurt_h_speed = 5;
 h_speed = normal_h_speed;
 
 x_offset = 0;

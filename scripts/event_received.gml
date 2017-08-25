@@ -48,7 +48,8 @@ switch event {
         current_lives--;
         if( current_lives == 0 ) instance_destroy();
         //spprite_index = animation_hurt;
-        h_speed = hurt_shock_h_speed;
+        //h_speed = hurt_shock_h_speed;
+        impulse_vector = 0;
         timer = 0;
         shock = true;
         state = HomerStates.STATE_HURT;
@@ -60,18 +61,13 @@ var event = argument0;
 
 switch event {
     case EVENT_UPDATE:
-        if( shock ) impulse_vector = LEFT;
-//        if( impulse_vector == 0 ) 
         homer_update();
         timer++;
         if( timer = hurt_shock_time ) {
             shock = false; 
-            h_speed = hurt_recovery_h_speed; 
-            impulse_vector = 0;
         }
         if( timer = hurt_total_time ) {
             state = HomerStates.STATE_FLYING;
-            h_speed = normal_h_speed;
         }
     break;
     case EVENT_UP:
