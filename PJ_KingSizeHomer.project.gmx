@@ -54,11 +54,13 @@
   <rooms name="rooms">
     <room>rooms\rm_test</room>
   </rooms>
-  <constants number="15">
+  <constants number="17">
     <constant name="LEFT">-1</constant>
     <constant name="RIGHT">1</constant>
     <constant name="DOWN">1</constant>
     <constant name="UP">-1</constant>
+    <constant name="EVENT_DRAW">2</constant>
+    <constant name="EVENT_UPDATE">3</constant>
     <constant name="EVENT_HURT">4</constant>
     <constant name="EVENT_LEFT_RELEASED">5</constant>
     <constant name="EVENT_RIGHT_RELEASED">6</constant>
