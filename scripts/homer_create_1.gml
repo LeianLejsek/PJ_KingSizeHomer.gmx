@@ -6,7 +6,7 @@ enum HomerStates {
 
 state = HomerStates.STATE_FLYING;
 
-mx_lives = -1;
+mx_lives = 5;
 current_lives = mx_lives;
 
 hurt_shock_time = 15;

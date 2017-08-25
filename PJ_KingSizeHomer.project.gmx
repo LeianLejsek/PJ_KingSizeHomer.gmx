@@ -12,6 +12,7 @@
     <sprite>sprites\spr_pingu</sprite>
     <sprite>sprites\spr_asteroid</sprite>
     <sprite>sprites\spr_asteroid_big</sprite>
+    <sprite>sprites\spr_heartopus</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bckgr_space</background>
@@ -19,28 +20,29 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <scripts name="Obstacle">
-      <script>scripts\lvl_controller_create.gml</script>
-      <script>scripts\initialize_rng_lane_values.gml</script>
-      <script>scripts\choose_random_lane.gml</script>
-      <script>scripts\update_rng_lane_values.gml</script>
-      <script>scripts\spawn_obstacle.gml</script>
-      <script>scripts\obstacle_parent_create.gml</script>
-      <script>scripts\obstacle_type_set_up.gml</script>
-      <script>scripts\obstacle_update.gml</script>
-      <script>scripts\obstacle_draw.gml</script>
+    <scripts name="Controll">
+      <script>scripts\control_create.gml</script>
+      <script>scripts\lane.gml</script>
+      <scripts name="Lvl controller">
+        <script>scripts\lvl_controller_create.gml</script>
+        <script>scripts\draw_lives.gml</script>
+        <script>scripts\initialize_rng_lane_values.gml</script>
+        <script>scripts\choose_random_lane.gml</script>
+        <script>scripts\update_rng_lane_values.gml</script>
+        <script>scripts\spawn_obstacle.gml</script>
+      </scripts>
+      <scripts name="obstacles">
+        <script>scripts\obstacle_parent_create.gml</script>
+        <script>scripts\obstacle_type_set_up.gml</script>
+        <script>scripts\obstacle_update.gml</script>
+        <script>scripts\obstacle_draw.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Homer">
-      <scripts name="states">
-        <script>scripts\event_received.gml</script>
-      </scripts>
+      <script>scripts\event_received.gml</script>
       <script>scripts\homer_create_1.gml</script>
       <script>scripts\update_lane_pos.gml</script>
       <script>scripts\homer_update.gml</script>
-    </scripts>
-    <scripts name="Control">
-      <script>scripts\control_create.gml</script>
-      <script>scripts\lane.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">

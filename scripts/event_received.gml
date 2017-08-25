@@ -48,7 +48,6 @@ switch event {
         current_lives--;
         if( current_lives == 0 ) instance_destroy();
         //spprite_index = animation_hurt;
-        //h_speed = hurt_shock_h_speed;
         impulse_vector = 0;
         timer = 0;
         shock = true;
