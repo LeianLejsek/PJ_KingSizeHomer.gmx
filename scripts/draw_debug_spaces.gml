@@ -8,3 +8,13 @@ draw_rectangle( global.playspace_x, global.playspace_y, global.playspace_x + glo
 
 draw_set_colour( c_green );
 draw_rectangle( global.gui_lives_x, global.gui_lives_y, global.gui_lives_x + global.gui_lives_width, global.gui_lives_y + global.gui_lives_height, true );
+
+draw_set_alpha( .25 );
+
+draw_set_colour( c_fuchsia );
+draw_rectangle( global.playspace_x, global.playspace_y, global.playspace_x + global.dangerzone_width, global.playspace_y + global.playspace_height, false );
+
+draw_set_colour( c_yellow );
+draw_rectangle( global.playspace_x + global.playspace_width - global.boostzone_width, global.playspace_y, global.playspace_x + global.playspace_width, global.playspace_y + global.playspace_height, false);
+
+draw_set_alpha( 1 );
