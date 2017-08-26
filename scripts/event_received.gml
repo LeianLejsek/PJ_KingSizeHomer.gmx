@@ -21,6 +21,9 @@ switch state {
 var event = argument0;
 
 switch event {
+    case EVENT_UPDATE:
+        homer_update();
+    break;
     case EVENT_UP:
         update_lane_pos( UP );
     break;
@@ -37,8 +40,19 @@ switch event {
     case EVENT_RIGHT_RELEASED:
         impulse_vector = 0;
     break;
+    case EVENT_DRAW:
+        draw_self();
+    break;
     case EVENT_HURT:
-        instance_destroy();
+        //play_sound
+        global.current_lives--;
+        if( global.current_lives == 0 ) instance_destroy();
+        //spprite_index = animation_hurt;
+        impulse_vector = 0;
+        image_alpha = .25;
+        timer = 0;
+        shock = true;
+        state = HomerStates.STATE_HURT;
     break;
 }
 
@@ -46,7 +60,36 @@ switch event {
 var event = argument0;
 
 switch event {
-    default:
+    case EVENT_UPDATE:
+        homer_update();
+        timer++;
+        if( timer = hurt_shock_time ) {
+            shock = false;
+            image_alpha = .75;
+        }
+        if( timer = hurt_total_time ) {
+            state = HomerStates.STATE_FLYING;
+            image_alpha = 1;
+        }
+    break;
+    case EVENT_UP:
+        if( !shock ) update_lane_pos( UP );
+    break;
+    case EVENT_DOWN:
+        if( !shock ) update_lane_pos( DOWN );
+    break;
+    case EVENT_LEFT_PRESSED:
+        if( !shock ) impulse_vector = LEFT;
+    break;
+    case EVENT_RIGHT_PRESSED:
+        if( !shock ) impulse_vector = RIGHT;
+    break;
+    case EVENT_LEFT_RELEASED:
+    case EVENT_RIGHT_RELEASED:
+        if( !shock ) impulse_vector = 0;
+    break;
+    case EVENT_DRAW:
+        draw_sprite_ext( sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_red, image_alpha );
     break;
 }
 

@@ -6,10 +6,16 @@ enum HomerStates {
 
 state = HomerStates.STATE_FLYING;
 
-mode = 1;
+shock = false;
+hurt_shock_time = 10;
+hurt_total_time = 40;
+animation_flash_cycle = 2;
 
 impulse_vector = 0;
-h_speed = 10;
+normal_h_speed = 20;
+hurt_h_speed = 10;
+h_speed = normal_h_speed;
+
 x_offset = 0;
 lane_pos = 0;
 
