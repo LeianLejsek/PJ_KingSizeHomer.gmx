@@ -32,12 +32,12 @@
         <script>scripts\update_rng_lane_values.gml</script>
         <script>scripts\spawn_obstacle.gml</script>
       </scripts>
-      <scripts name="obstacles">
-        <script>scripts\obstacle_parent_create.gml</script>
-        <script>scripts\obstacle_type_set_up.gml</script>
-        <script>scripts\obstacle_update.gml</script>
-        <script>scripts\obstacle_draw.gml</script>
-      </scripts>
+    </scripts>
+    <scripts name="obstacles">
+      <script>scripts\obstacle_parent_create.gml</script>
+      <script>scripts\obstacle_type_set_up.gml</script>
+      <script>scripts\obstacle_update.gml</script>
+      <script>scripts\obstacle_draw.gml</script>
     </scripts>
     <scripts name="Homer">
       <script>scripts\event_received.gml</script>

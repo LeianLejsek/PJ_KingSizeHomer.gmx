@@ -49,6 +49,7 @@ switch event {
         if( global.current_lives == 0 ) instance_destroy();
         //spprite_index = animation_hurt;
         impulse_vector = 0;
+        image_alpha = .25;
         timer = 0;
         shock = true;
         state = HomerStates.STATE_HURT;
@@ -63,10 +64,12 @@ switch event {
         homer_update();
         timer++;
         if( timer = hurt_shock_time ) {
-            shock = false; 
+            shock = false;
+            image_alpha = .75;
         }
         if( timer = hurt_total_time ) {
             state = HomerStates.STATE_FLYING;
+            image_alpha = 1;
         }
     break;
     case EVENT_UP:
@@ -86,7 +89,7 @@ switch event {
         if( !shock ) impulse_vector = 0;
     break;
     case EVENT_DRAW:
-        draw_sprite_ext( sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_white, 0.5 );
+        draw_sprite_ext( sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_red, image_alpha );
     break;
 }
 

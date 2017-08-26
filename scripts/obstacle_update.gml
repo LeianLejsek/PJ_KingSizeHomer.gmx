@@ -20,13 +20,13 @@ if ( x < -abs( sprite_width/2 ) ) {
 }
 
 #define wall_update
-x -= h_speed;
+x -= global.lvl_speed;
 
 #define straight_line_update
-x -= h_speed;
+x -= global.lvl_speed;
 
 #define sin_wave_update
-x -= h_speed;
+x -= global.lvl_speed;
 y = lane(lane_pos) + sin( x / wave_length + rnd_start ) * wave_amplitude;
 //move vertically
 
@@ -67,4 +67,4 @@ switch state {
     break;
 }
 
-x -= h_speed;
+x -= global.lvl_speed;
