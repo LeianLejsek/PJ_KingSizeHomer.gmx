@@ -23,6 +23,7 @@
     <scripts name="Controll">
       <script>scripts\control_create.gml</script>
       <script>scripts\lane.gml</script>
+      <script>scripts\draw_debug_spaces.gml</script>
       <scripts name="Lvl controller">
         <script>scripts\lvl_controller_create.gml</script>
         <script>scripts\draw_lives.gml</script>

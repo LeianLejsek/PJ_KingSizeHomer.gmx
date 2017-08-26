@@ -45,8 +45,8 @@ switch event {
     break;
     case EVENT_HURT:
         //play_sound
-        current_lives--;
-        if( current_lives == 0 ) instance_destroy();
+        global.current_lives--;
+        if( global.current_lives == 0 ) instance_destroy();
         //spprite_index = animation_hurt;
         impulse_vector = 0;
         timer = 0;
