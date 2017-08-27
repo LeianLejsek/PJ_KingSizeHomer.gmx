@@ -9,7 +9,12 @@ state = HomerStates.STATE_FLYING;
 shock = false;
 hurt_shock_time = 10;
 hurt_total_time = 40;
-animation_flash_cycle = 2;
+//animation_flash_cycle = 2;
+
+max_damage = 45;
+damage_increase = 1;
+current_damage = 0;
+restore_damage_timer = 15;
 
 impulse_vector = 0;
 normal_h_speed = 20;

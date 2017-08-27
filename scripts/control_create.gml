@@ -12,10 +12,10 @@ global.gui_lives_height = 48;
 global.gui_lives_x = 20;
 global.gui_lives_y = 15;
 
-global.gui_time_width =1
-global.gui_time_height =1
-global.gui_time_x =1
-global.gui_time_y =1
+global.gui_time_score_width =1
+global.gui_time_score_height =1
+global.gui_time_score_x =1
+global.gui_time_score_y =1
 
 //Stablish lanes
 global.lanes = 4;

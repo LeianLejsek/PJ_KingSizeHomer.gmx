@@ -40,8 +40,8 @@
       <script>scripts\obstacle_draw.gml</script>
     </scripts>
     <scripts name="Homer">
-      <script>scripts\event_received.gml</script>
       <script>scripts\homer_create_1.gml</script>
+      <script>scripts\event_received.gml</script>
       <script>scripts\update_lane_pos.gml</script>
       <script>scripts\homer_update.gml</script>
     </scripts>

@@ -1,3 +1,12 @@
+if( x < global.playspace_x + global.dangerzone_width ) {
+    current_damage += damage_increase;
+    if( current_damage >= max_damage )instance_destroy();
+} else {
+    if( current_damage > 0 ) {
+        current_damage -= damage_increase*2;
+    }
+}
+
 x_offset = h_speed * impulse_vector;
 
 x_offset -= global.lvl_speed;

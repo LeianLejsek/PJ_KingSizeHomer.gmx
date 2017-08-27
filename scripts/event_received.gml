@@ -42,6 +42,9 @@ switch event {
     break;
     case EVENT_DRAW:
         draw_self();
+        if( current_damage > 0 ) {
+            draw_healthbar( x - 50, y - sprite_height, x + 50, y - sprite_height + 10, current_damage/max_damage * 100, c_black, c_red, c_red, 0, true, false );
+        }
     break;
     case EVENT_HURT:
         //play_sound
