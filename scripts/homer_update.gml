@@ -16,13 +16,20 @@ if( x > global.playspace_x + global.playspace_width - global.boostzone_width ) {
     }
 }
 
-x_offset = h_speed * impulse_vector;
+if( impulse_vector != 0 ) {
+    h_speed += current_acc * impulse_vector;
+    if( abs(h_speed) > normal_max_speed ) h_speed = normal_max_speed * sign( h_speed )
+} else {
+    h_speed -= current_decc;
+    if( shock ) {
+        var max_speed = global.lvl_speed + impact_speed;
+    } else {
+        var max_speed = global.lvl_speed;
+    } 
+    if( abs(h_speed) > max_speed ) h_speed = -max_speed;
+}
 
-x_offset -= global.lvl_speed;
-
-if( shock ) x_offset -= hurt_h_speed;
-
-next_x = x + x_offset;
+next_x = x + h_speed;
 if( next_x > global.playspace_x && next_x < global.playspace_x + global.playspace_width ) {
     x = next_x;
 }

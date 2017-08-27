@@ -54,8 +54,10 @@ switch event {
         global.current_lives--;
         if( global.current_lives == 0 ) instance_destroy();
         //spprite_index = animation_hurt;
+        with( other ) instance_destroy();
         impulse_vector = 0;
         image_alpha = .25;
+        h_speed = -global.lvl_speed;
         timer = 0;
         shock = true;
         state = HomerStates.STATE_HURT;

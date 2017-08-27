@@ -1,8 +1,8 @@
-global.lvl_speed = 10;
+global.lvl_speed = 15;
 max_rng_range = 100;
 rng_offset = 5;
 spawn_timer_min = 5;
-spawn_timer_max = 15;
+spawn_timer_max = 8;
 
 global.max_lives = -1; //Set to -1 for ilimited lives
 global.current_lives = global.max_lives;
