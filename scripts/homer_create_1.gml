@@ -14,7 +14,11 @@ hurt_total_time = 40;
 max_damage = 45;
 damage_increase = 1;
 current_damage = 0;
-restore_damage_timer = 15;
+
+max_boost = 120;
+boost_increase = 1;
+current_boost = 0;
+
 
 impulse_vector = 0;
 normal_h_speed = 20;
