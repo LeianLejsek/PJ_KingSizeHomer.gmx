@@ -9,7 +9,10 @@ if( x < global.playspace_x + global.dangerzone_width ) {
 
 if( x > global.playspace_x + global.playspace_width - global.boostzone_width ) {
     current_boost += boost_increase;
-    if( current_boost >= max_boost ){}//win condition;
+    if( current_boost >= max_boost ){
+        current_boost = 0;
+        global.boost_cells++;
+    }
 } else {
     if( current_boost > 0 ) {
         current_boost -= boost_increase/2;

@@ -27,6 +27,7 @@
       <scripts name="Lvl controller">
         <script>scripts\lvl_controller_create.gml</script>
         <script>scripts\draw_lives.gml</script>
+        <script>scripts\draw_boost_gauge.gml</script>
         <script>scripts\initialize_rng_lane_values.gml</script>
         <script>scripts\choose_random_lane.gml</script>
         <script>scripts\update_rng_lane_values.gml</script>

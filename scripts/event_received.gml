@@ -98,6 +98,12 @@ switch event {
     break;
     case EVENT_DRAW:
         draw_sprite_ext( sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_red, image_alpha );
+        if( current_damage > 0 ) {
+            draw_healthbar( x - 50, y - sprite_height, x + 50, y - sprite_height + 10, current_damage/max_damage * 100, c_black, c_red, c_red, 0, true, false );
+        }
+        if( current_boost > 0 ) {
+            draw_healthbar( x - 50, y - sprite_height, x + 50, y - sprite_height + 10, current_boost/max_boost * 100, c_black, c_yellow, c_yellow, 0, true, false );
+        }
     break;
 }
 

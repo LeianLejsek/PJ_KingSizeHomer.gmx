@@ -7,6 +7,9 @@ spawn_timer_max = 8;
 global.max_lives = -1; //Set to -1 for ilimited lives
 global.current_lives = global.max_lives;
 
+global.max_boost_cells = 4;
+global.boost_cells = 0;
+
 lives_sprite_width = global.gui_lives_width / global.max_lives;
 lives_sprite_height = global.gui_lives_height;
 lives_sprite_xscale = lives_sprite_width / 64;
