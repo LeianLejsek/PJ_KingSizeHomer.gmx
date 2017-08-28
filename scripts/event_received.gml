@@ -39,6 +39,7 @@ switch event {
     //case EVENT_LEFT_RELEASED:
     case EVENT_RIGHT_RELEASED:
         impulse_vector = 0;
+        top_speed = false;
     break;
     case EVENT_DRAW:
         draw_self();
@@ -51,11 +52,12 @@ switch event {
         //spprite_index = animation_hurt;
         with( other ) instance_destroy();
         impulse_vector = 0;
-        image_alpha = .25;
+        top_speed = false;
+        //image_alpha = .25;
         h_speed = -global.lvl_speed;
         timer = 0;
-        shock = true;
-        state = HomerStates.STATE_HURT;
+        //shock = true;
+        //state = HomerStates.STATE_HURT;
     break;
 }
 

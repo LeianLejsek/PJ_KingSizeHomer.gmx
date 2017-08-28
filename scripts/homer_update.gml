@@ -1,30 +1,19 @@
-/*
-if( x < global.playspace_x + global.dangerzone_width ) {
-    current_damage += damage_increase;
-    if( current_damage >= max_damage )instance_destroy();
-} else {
-    if( current_damage > 0 ) {
-        current_damage -= damage_increase*2;
-    }
-}
-
-if( x > global.playspace_x + global.playspace_width - global.boostzone_width ) {
-    current_boost += boost_increase;
-    if( current_boost >= max_boost ){
-        current_boost = 0;
-        global.boost_cells++;
-    }
-} else {
-    if( current_boost > 0 ) {
-        current_boost -= boost_increase/2;
-    }
-}
-*/
 if( impulse_vector != 0 ) {
-    h_speed += current_acc * impulse_vector;
-    if( abs( h_speed ) > normal_max_speed ) {
-        h_speed = normal_max_speed * sign( h_speed )
-        //update boost meter
+    if( !top_speed ){
+        h_speed += current_acc;
+        if( h_speed > normal_max_speed ){
+            h_speed = normal_max_speed;
+            top_speed = true;
+        } 
+    } else {
+        h_speed -= max_speed_decc;
+        if( h_speed <= 0 ) h_speed = 0;
+    
+        if( boost_meter < 0 ) {
+            var boost_increase = boost_increase_damaged; 
+        } else {
+            var boost_increase = h_speed/3 + 1;
+        }
         boost_meter += boost_increase;
         if( boost_meter >= max_boost ) {
             global.boost_cells++;
@@ -47,8 +36,8 @@ if( impulse_vector != 0 ) {
         }
     }
 }
-
 next_x = x + h_speed;
 if( next_x > global.playspace_x && next_x < global.playspace_x + global.playspace_width ) {
     x = next_x;
 }
+

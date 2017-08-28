@@ -11,24 +11,28 @@ hurt_shock_time = 10;
 hurt_total_time = 40;
 //animation_flash_cycle = 2;
 
-max_damage = 120;
-damage_increase = 1;
+max_damage = 85;
+damage_increase = 3;
 max_boost = 120;
-boost_increase = 1;
+boost_increase_damaged = 3;
+boost_increase_normal = 2;
 boost_meter = 0;
 
 impulse_vector = 0;
+top_speed = 0;
 
 normal_acc = 5;
 
 idle_decc = 1.5;
+
+max_speed_decc = .08;
 
 normal_decc = 6;
 
 current_acc = normal_acc;
 current_decc = normal_decc;
 
-normal_max_speed = 7;
+normal_max_speed = 10;
 impact_speed = 8;
 h_speed = 0;
 
