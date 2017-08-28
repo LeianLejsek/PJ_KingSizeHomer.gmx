@@ -31,23 +31,18 @@ switch event {
         update_lane_pos( DOWN );
     break;
     case EVENT_LEFT_PRESSED:
-        impulse_vector = LEFT;
+        //impulse_vector = LEFT;
     break;
     case EVENT_RIGHT_PRESSED:
         impulse_vector = RIGHT;
     break;
-    case EVENT_LEFT_RELEASED:
+    //case EVENT_LEFT_RELEASED:
     case EVENT_RIGHT_RELEASED:
         impulse_vector = 0;
     break;
     case EVENT_DRAW:
         draw_self();
-        if( current_damage > 0 ) {
-            draw_healthbar( x - 50, y - sprite_height, x + 50, y - sprite_height + 10, current_damage/max_damage * 100, c_black, c_red, c_red, 0, true, false );
-        }
-        if( current_boost > 0 ) {
-            draw_healthbar( x - 50, y - sprite_height, x + 50, y - sprite_height + 10, current_boost/max_boost * 100, c_black, c_yellow, c_yellow, 0, true, false );
-        }
+        draw_boost_meter();
     break;
     case EVENT_HURT:
         //play_sound
@@ -87,23 +82,18 @@ switch event {
         if( !shock ) update_lane_pos( DOWN );
     break;
     case EVENT_LEFT_PRESSED:
-        if( !shock ) impulse_vector = LEFT;
+        //if( !shock ) impulse_vector = LEFT;
     break;
     case EVENT_RIGHT_PRESSED:
         if( !shock ) impulse_vector = RIGHT;
     break;
-    case EVENT_LEFT_RELEASED:
+    //case EVENT_LEFT_RELEASED:
     case EVENT_RIGHT_RELEASED:
         if( !shock ) impulse_vector = 0;
     break;
     case EVENT_DRAW:
         draw_sprite_ext( sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_red, image_alpha );
-        if( current_damage > 0 ) {
-            draw_healthbar( x - 50, y - sprite_height, x + 50, y - sprite_height + 10, current_damage/max_damage * 100, c_black, c_red, c_red, 0, true, false );
-        }
-        if( current_boost > 0 ) {
-            draw_healthbar( x - 50, y - sprite_height, x + 50, y - sprite_height + 10, current_boost/max_boost * 100, c_black, c_yellow, c_yellow, 0, true, false );
-        }
+        draw_boost_meter();
     break;
 }
 
