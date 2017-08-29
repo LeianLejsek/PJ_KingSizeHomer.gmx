@@ -13,7 +13,7 @@ hurt_total_time = 40;
 
 max_damage = 85;
 damage_increase = 3;
-max_boost = 120;
+max_boost = 240;
 boost_increase_damaged = 3;
 boost_increase_normal = 2;
 boost_meter = 0;
