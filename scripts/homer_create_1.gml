@@ -12,12 +12,15 @@ hurt_total_time = 40;
 //animation_flash_cycle = 2;
 
 max_damage = 100;
-damage_increase = 3;
-damage_decrease = 6;
+damage_increase = 5;
+damage_decrease = 10;
+
 max_boost = 240;
 boost_increase_damaged = 3;
 boost_increase_normal = 6;
 boost_decrease = 5;
+impact_boost_decrease = 120;
+
 boost_meter = 0;
 damage_meter = 0;
 
@@ -36,7 +39,7 @@ current_acc = normal_acc;
 current_decc = normal_decc;
 
 normal_max_speed = 10;
-impact_speed = 8;
+impact_speed = 20;
 h_speed = 0;
 
 x_offset = 0;

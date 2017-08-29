@@ -6,7 +6,7 @@ if( impulse_vector != 0 ) {
             top_speed = true;
         } 
         
-        if( boost_meter > 0 ) boost_meter -= boost_decrease;
+        
         
     } else {
         h_speed -= max_speed_decc;
@@ -16,7 +16,7 @@ if( impulse_vector != 0 ) {
         if( boost_meter < 0 ) {
             var boost_increase = boost_increase_damaged; 
         } else {
-            var boost_increase = h_speed/3 + 2;
+            var boost_increase = h_speed/3 + 5;
         }
         boost_meter += boost_increase;
         if( boost_meter >= max_boost ) {
@@ -26,7 +26,12 @@ if( impulse_vector != 0 ) {
         //Overheat;
         damage_meter += damage_increase;
         if( damage_meter >= max_damage ) {
-            instance_destroy();
+            top_speed = false;
+            damage_meter = 0;
+            global.boost_cells -= 2;
+            if( global.boost_cells < 0 ) global.boost_cells = 0;
+            impulse_vector = 0;
+            h_speed = -global.lvl_speed;
         }
     }
 } else {
@@ -40,7 +45,7 @@ if( impulse_vector != 0 ) {
         h_speed = -max_speed;
         //update boost meter
     }
-
+    if( boost_meter > 0 ) boost_meter -= boost_decrease;
     if( damage_meter > 0 ) damage_meter -= damage_decrease;
 }
 next_x = x + h_speed;
