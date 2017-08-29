@@ -11,12 +11,15 @@ hurt_shock_time = 10;
 hurt_total_time = 40;
 //animation_flash_cycle = 2;
 
-max_damage = 85;
+max_damage = 100;
 damage_increase = 3;
+damage_decrease = 6;
 max_boost = 240;
 boost_increase_damaged = 3;
-boost_increase_normal = 2;
+boost_increase_normal = 6;
+boost_decrease = 5;
 boost_meter = 0;
+damage_meter = 0;
 
 impulse_vector = 0;
 top_speed = 0;
