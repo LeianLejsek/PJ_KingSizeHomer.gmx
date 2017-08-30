@@ -35,6 +35,7 @@ switch event {
     break;
     case EVENT_RIGHT_PRESSED:
         impulse_vector = RIGHT;
+        current_damage_decrease = damage_decrease_initial;
     break;
     //case EVENT_LEFT_RELEASED:
     case EVENT_RIGHT_RELEASED:

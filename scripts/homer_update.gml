@@ -16,7 +16,7 @@ if( impulse_vector != 0 ) {
         if( boost_meter < 0 ) {
             var boost_increase = boost_increase_damaged; 
         } else {
-            var boost_increase = h_speed/3 + 5;
+            var boost_increase = 10 ^ ( damage_meter/max_damage );
         }
         boost_meter += boost_increase;
         if( boost_meter >= max_boost ) {
@@ -46,7 +46,8 @@ if( impulse_vector != 0 ) {
         //update boost meter
     }
     if( boost_meter > 0 ) boost_meter -= boost_decrease;
-    if( damage_meter > 0 ) damage_meter -= damage_decrease;
+    if( current_damage_decrease < damage_decrease_max ) current_damage_decrease += damage_decrease_acc;
+    if( damage_meter > 0 ) damage_meter -= current_damage_decrease;
 }
 next_x = x + h_speed;
 if( next_x > global.playspace_x && next_x < global.playspace_x + global.playspace_width ) {
