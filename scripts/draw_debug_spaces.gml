@@ -1,4 +1,4 @@
-
+/*
 draw_set_colour( c_red );
 for( i = 0; i < global.lanes; i++) {
     draw_line( global.playspace_x, lane( i ), global.playspace_x + global.playspace_width, lane( i ) );
