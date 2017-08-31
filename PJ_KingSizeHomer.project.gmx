@@ -21,6 +21,11 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <scripts name="Controll">
+      <script>scripts\control_create.gml</script>
+      <script>scripts\lane.gml</script>
+      <script>scripts\draw_debug_spaces.gml</script>
+    </scripts>
     <scripts name="Lvl controller">
       <script>scripts\lvl_controller_create.gml</script>
       <script>scripts\draw_lives.gml</script>
@@ -29,11 +34,6 @@
       <script>scripts\choose_random_lane.gml</script>
       <script>scripts\update_rng_lane_values.gml</script>
       <script>scripts\spawn_obstacle.gml</script>
-    </scripts>
-    <scripts name="Controll">
-      <script>scripts\control_create.gml</script>
-      <script>scripts\lane.gml</script>
-      <script>scripts\draw_debug_spaces.gml</script>
     </scripts>
     <scripts name="obstacles">
       <script>scripts\obstacle_parent_create.gml</script>
