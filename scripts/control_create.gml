@@ -23,7 +23,7 @@ global.gui_boost_gauge_x = 40;
 global.gui_boost_gauge_y = 100;
 
 //Stablish lanes
-global.lanes = 3;
+global.lanes = 4;
 global.lane_spacing = global.playspace_height / global.lanes;
 global.border = global.lane_spacing / 2;
 

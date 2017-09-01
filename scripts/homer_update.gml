@@ -22,13 +22,21 @@ if( impulse_vector != 0 ) {
         if( boost_meter >= max_boost ) {
             global.boost_cells++;
             boost_meter = 0;
+            if( global.boost_cells >= global.max_boost_cells ) {
+                global.lvl_speed += 2; 
+                global.boost_cells = 0;
+                max_damage = max_damage * 1.1;
+                damage_increase = damage_increase * 1.05;
+                damage_decrease_max = damage_decrease_max * 1.05;
+                background_hspeed[ 0 ] = -global.lvl_speed/4;
+            }
         }
         //Overheat;
         damage_meter += damage_increase;
         if( damage_meter >= max_damage ) {
             top_speed = false;
             damage_meter = 0;
-            global.boost_cells -= 4;
+            global.boost_cells --;
             if( global.boost_cells < 0 ) global.boost_cells = 0;
             impulse_vector = 0;
             h_speed = -global.lvl_speed;
@@ -37,9 +45,9 @@ if( impulse_vector != 0 ) {
 } else {
     h_speed -= current_decc;
     if( shock ) {
-        var max_speed = global.lvl_speed + impact_speed;
+        var max_speed = global.lvl_speed/1.1 + impact_speed;
     } else {
-        var max_speed = global.lvl_speed;
+        var max_speed = global.lvl_speed/1.1;
     } 
     if( abs( h_speed ) > max_speed ) {
         h_speed = -max_speed;

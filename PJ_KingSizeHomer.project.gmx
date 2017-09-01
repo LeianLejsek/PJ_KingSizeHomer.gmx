@@ -46,6 +46,7 @@
       <script>scripts\event_received.gml</script>
       <script>scripts\draw_boost_meter.gml</script>
       <script>scripts\update_lane_pos.gml</script>
+      <script>scripts\draw_lvl_variables.gml</script>
       <script>scripts\homer_update.gml</script>
     </scripts>
   </scripts>
