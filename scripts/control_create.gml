@@ -1,5 +1,5 @@
 //Define the space in which the gameplay happens
-global.playspace_width = room_width/5 * 4;
+global.playspace_width = room_width/3;
 global.playspace_height = room_height/4 * 3;
 global.playspace_x = 108;    //position of the top left
 global.playspace_y = room_height/9 //- global.playspace_height;    //corner of the playspace

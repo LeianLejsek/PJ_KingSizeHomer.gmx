@@ -1,4 +1,4 @@
-draw_healthbar( x - 50, y - sprite_height, x + 50, y - sprite_height + 10, boost_meter/max_boost * 100, c_black, c_yellow, c_yellow, 0, true, false );
+draw_healthbar( x - 50, y - sprite_height, x + 50, y - sprite_height + 10, boost_meter/current_max_boost * 100, c_black, c_yellow, c_yellow, 0, true, false );
 var damage_percentage = damage_meter / max_damage * 100;
 var damagebar_representation = damage_percentage * 3;
 //draw_healthbar( x - 50, y + sprite_height -10 , x + 50, y + sprite_height, damagebar_representation, c_black, c_red, c_red, 0, true, false );

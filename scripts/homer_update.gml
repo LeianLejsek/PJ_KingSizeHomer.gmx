@@ -8,27 +8,18 @@ if( impulse_vector != 0 ) {
         
         
         
-    } else {
-        h_speed -= max_speed_decc;
-        
+    } else {        
         if( h_speed <= 0 ) h_speed = 0;
     
-        if( boost_meter < 0 ) {
-            var boost_increase = boost_increase_damaged; 
-        } else {
-            var boost_increase = 10 ^ ( damage_meter/max_damage );
-        }
+        var boost_increase = 15 ^ ( damage_meter/max_damage );
         boost_meter += boost_increase;
-        if( boost_meter >= max_boost ) {
+        if( boost_meter >= current_max_boost ) {
             global.boost_cells++;
             boost_meter = 0;
+            current_max_boost = current_max_boost * 1.25;
             if( global.boost_cells >= global.max_boost_cells ) {
-                global.lvl_speed += 2; 
                 global.boost_cells = 0;
-                max_damage = max_damage * 1.1;
-                damage_increase = damage_increase * 1.05;
-                damage_decrease_max = damage_decrease_max * 1.05;
-                background_hspeed[ 0 ] = -global.lvl_speed/4;
+                current_max_boost = max_boost_original;
             }
         }
         //Overheat;
@@ -58,7 +49,16 @@ if( impulse_vector != 0 ) {
     if( damage_meter > 0 ) damage_meter -= current_damage_decrease;
 }
 next_x = x + h_speed;
-if( next_x > global.playspace_x && next_x < global.playspace_x + global.playspace_width ) {
+if( next_x >= global.playspace_x && next_x <= global.playspace_x + global.playspace_width ) {
     x = next_x;
+    global.lvl_speed = 10;
+    background_hspeed[ 0 ] = -global.lvl_speed/4;
+    obj_lvl_controller.spawn_timer = 20;
+} else {
+    if( next_x >= global.playspace_x + global.playspace_width ) {
+        global.lvl_speed = 30;
+        background_hspeed[ 0 ] = -global.lvl_speed/4;
+        obj_lvl_controller.spawn_timer = 10;
+    }
 }
 

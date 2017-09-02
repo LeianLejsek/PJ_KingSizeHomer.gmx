@@ -11,16 +11,15 @@ hurt_shock_time = 10;
 hurt_total_time = 40;
 //animation_flash_cycle = 2;
 
-max_damage = 100;
+max_damage = 600;
 damage_increase = 3;
 damage_decrease_initial = 0;
 current_damage_decrease = damage_decrease_initial;
-damage_decrease_acc = 1;
-damage_decrease_max = 40;
+damage_decrease_acc = 10;
+damage_decrease_max = 90;
 
-max_boost = 240;
-boost_increase_damaged = 3;
-boost_increase_normal = 6;
+max_boost_original = 120;
+current_max_boost = max_boost_original;
 boost_decrease = 2;
 impact_boost_decrease = 120;
 
@@ -42,7 +41,7 @@ current_acc = normal_acc;
 current_decc = normal_decc;
 
 normal_max_speed = 10;
-impact_speed = 20;
+impact_speed = 60;
 h_speed = 0;
 
 x_offset = 0;

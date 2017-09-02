@@ -1,13 +1,12 @@
 global.lvl_speed = 10;
 max_rng_range = 100;
 rng_offset = 5;
-spawn_timer_min = 20;
-spawn_timer_max = 20;
+spawn_timer = 10;
 
 global.max_lives = -1; //Set to -1 for ilimited lives
 global.current_lives = global.max_lives;
 
-global.max_boost_cells = 15;
+global.max_boost_cells = 20;
 global.boost_cells = 0;
 
 lives_sprite_width = global.gui_lives_width / global.max_lives;

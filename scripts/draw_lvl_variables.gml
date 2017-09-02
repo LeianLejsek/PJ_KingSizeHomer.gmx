@@ -1,4 +1,4 @@
-draw_set_colour( c_aqua );
+/*draw_set_colour( c_aqua );
 draw_text( 50, 50, global.lvl_speed );
 
 draw_set_colour( c_red );

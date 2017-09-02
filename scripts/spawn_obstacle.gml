@@ -4,14 +4,10 @@ var current_obstacle = instance_create( room_width + 50, lane( current_lane ), o
 current_obstacle.lane_pos = current_lane;
 with ( current_obstacle ) {
     type = choose( WALL, STRAIGHT_LINE, SIN_WAVE, JUMPING );
-    if( type = WALL ){
-    other.alarm[0] = irandom_range( other.spawn_timer_min + global.lvl_speed, other.spawn_timer_max + global.lvl_speed );
-    } else {
-    other.alarm[0] = irandom_range( other.spawn_timer_min, other.spawn_timer_max );
-    }
     obstacle_type_set_up( type );
 }
 
+alarm[ 0 ] = spawn_timer;
 update_rng_lane_values( current_lane );
 
 
