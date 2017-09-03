@@ -18,7 +18,7 @@ current_damage_decrease = damage_decrease_initial;
 damage_decrease_acc = 10;
 damage_decrease_max = 90;
 
-max_boost_original = 120;
+max_boost_original = 240;
 current_max_boost = max_boost_original;
 boost_decrease = 2;
 impact_boost_decrease = 120;

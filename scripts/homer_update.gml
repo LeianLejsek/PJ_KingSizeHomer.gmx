@@ -16,7 +16,7 @@ if( impulse_vector != 0 ) {
         if( boost_meter >= current_max_boost ) {
             global.boost_cells++;
             boost_meter = 0;
-            current_max_boost = current_max_boost * 1.25;
+            current_max_boost = current_max_boost * 1.17;
             if( global.boost_cells >= global.max_boost_cells ) {
                 global.boost_cells = 0;
                 current_max_boost = max_boost_original;
