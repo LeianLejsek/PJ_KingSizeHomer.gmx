@@ -1,17 +1,19 @@
-if( impulse_vector != 0 ) {
+damage_percentage = damage_meter / max_damage * 100;
+
+if( impulse_vector == 1 ) {
     if( !top_speed ){
         h_speed += current_acc;
         if( h_speed > normal_max_speed ){
             h_speed = normal_max_speed;
             top_speed = true;
         } 
-        
-        
-        
     } else {        
         if( h_speed <= 0 ) h_speed = 0;
-    
-        var boost_increase = 15 ^ ( damage_meter/max_damage );
+        if( damage_percentage > 65 ) {
+            var boost_increase = current_max_boost / ( 20 + global.boost_cells );
+        } else {
+            var boost_increase = 15 ^ ( damage_meter/max_damage );
+        }
         boost_meter += boost_increase;
         if( boost_meter >= current_max_boost ) {
             global.boost_cells++;
@@ -20,6 +22,7 @@ if( impulse_vector != 0 ) {
             if( global.boost_cells >= global.max_boost_cells ) {
                 global.boost_cells = 0;
                 current_max_boost = max_boost_original;
+                damage_meter = 0;
             }
         }
         //Overheat;
@@ -42,11 +45,17 @@ if( impulse_vector != 0 ) {
     } 
     if( abs( h_speed ) > max_speed ) {
         h_speed = -max_speed;
-        //update boost meter
     }
     if( boost_meter > 0 ) boost_meter -= boost_decrease;
     if( current_damage_decrease < damage_decrease_max ) current_damage_decrease += damage_decrease_acc;
-    if( damage_meter > 0 ) damage_meter -= current_damage_decrease;
+    if( damage_meter >= 0 ) { 
+        damage_meter -= current_damage_decrease;
+    } else { 
+        damage_meter = 0;
+    }
+    if( damage_meter < 0 ) {
+        miau = 'miau';
+    }
 }
 next_x = x + h_speed;
 if( next_x >= global.playspace_x && next_x <= global.playspace_x + global.playspace_width ) {
@@ -58,7 +67,7 @@ if( next_x >= global.playspace_x && next_x <= global.playspace_x + global.playsp
     if( next_x >= global.playspace_x + global.playspace_width ) {
         global.lvl_speed = 30;
         background_hspeed[ 0 ] = -global.lvl_speed/4;
-        obj_lvl_controller.spawn_timer = 10;
+        obj_lvl_controller.spawn_timer = 20;
     }
 }
 

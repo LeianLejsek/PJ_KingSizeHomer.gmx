@@ -45,7 +45,6 @@ switch event {
     case EVENT_DRAW:
         draw_self();
         draw_boost_meter();
-        draw_lvl_variables();
     break;
     case EVENT_HURT:
         //play_sound
