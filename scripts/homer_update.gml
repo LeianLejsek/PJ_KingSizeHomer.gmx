@@ -10,7 +10,7 @@ if( impulse_vector == 1 ) {
     } else {        
         if( h_speed <= 0 ) h_speed = 0;
         if( damage_percentage > augmented_boost_damage_percentage_threshold ) {
-            var boost_increase = current_max_boost / ( augmented_boost_increase_initial_percentage + global.boost_cells * 3 );
+            var boost_increase = current_max_boost / ( augmented_boost_increase_initial_percentage + global.boost_cells * 2 );
             global.augmented_boost = true;
         } else {
             var boost_increase = boost_increase_base ^ ( damage_meter/max_damage );
