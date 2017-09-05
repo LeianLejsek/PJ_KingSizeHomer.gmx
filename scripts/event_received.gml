@@ -54,7 +54,7 @@ switch event {
         with( other ) instance_destroy();
         impulse_vector = 0;
         top_speed = false;
-        boost_meter -= impact_boost_decrease;
+        boost_meter -= current_max_boost / 2;
         if( boost_meter < 0 ) boost_meter = 0;
         //image_alpha = .25;
         h_speed = -global.lvl_speed;

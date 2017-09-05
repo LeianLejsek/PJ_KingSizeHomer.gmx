@@ -9,16 +9,18 @@ if( impulse_vector == 1 ) {
         } 
     } else {        
         if( h_speed <= 0 ) h_speed = 0;
-        if( damage_percentage > 65 ) {
-            var boost_increase = current_max_boost / ( 20 + global.boost_cells );
+        if( damage_percentage > augmented_boost_damage_percentage_threshold ) {
+            var boost_increase = current_max_boost / ( augmented_boost_increase_initial_percentage + global.boost_cells );
+            augmented_boost = true;
         } else {
-            var boost_increase = 15 ^ ( damage_meter/max_damage );
+            var boost_increase = boost_increase_base ^ ( damage_meter/max_damage );
+            augmented_boost = false;
         }
         boost_meter += boost_increase;
         if( boost_meter >= current_max_boost ) {
             global.boost_cells++;
             boost_meter = 0;
-            current_max_boost = current_max_boost * 1.17;
+            current_max_boost = current_max_boost * max_boost_increase_factor;
             if( global.boost_cells >= global.max_boost_cells ) {
                 global.boost_cells = 0;
                 current_max_boost = max_boost_original;
@@ -57,16 +59,22 @@ if( impulse_vector == 1 ) {
         miau = 'miau';
     }
 }
+if( augmented_boost ) {
+    background_hspeed[ 0 ] = -global.lvl_speed/2.5;
+} else {
+    background_hspeed[ 0 ] = -global.lvl_speed/4;
+}
+
 next_x = x + h_speed;
 if( next_x >= global.playspace_x && next_x <= global.playspace_x + global.playspace_width ) {
     x = next_x;
     global.lvl_speed = 10;
-    background_hspeed[ 0 ] = -global.lvl_speed/4;
+    //background_hspeed[ 0 ] = -global.lvl_speed/4;
     obj_lvl_controller.spawn_timer = 20;
 } else {
     if( next_x >= global.playspace_x + global.playspace_width ) {
         global.lvl_speed = 30;
-        background_hspeed[ 0 ] = -global.lvl_speed/4;
+        //background_hspeed[ 0 ] = -global.lvl_speed/4;
         obj_lvl_controller.spawn_timer = 20;
     }
 }
