@@ -17,21 +17,29 @@ switch type {
 }
 
 #define wall_set_up
-sprite_index = spr_asteroid_big;
-image_speed = 0;
-image_index = irandom( image_number - 1 );
 h_speed = global.lvl_speed;
 //size in lane separation units
-size_w = 1;
-size_h = choose( 1, 2 );
-//place top or bottom
+size_w = choose( 1, 2 );
+if( size_w == 2 ) {
+    sprite_index = spr_asteroid;
+    image_speed = 0;
+    image_index = irandom( image_number - 1 );
+} else {
+    sprite_index = spr_asteroid_big;
+    image_speed = 0;
+    image_index = irandom( image_number - 1 );
+}
+size_h = 2;
+
+y = lane( lane_pos ) + global.lane_spacing/2;
+/*//place top or bottom
 lane_pos = choose( UP, DOWN );
 
 if( lane_pos = UP ) {
     y = global.playspace_y + ( global.lane_spacing * size_h )/2;
 } else {
     y = global.playspace_y + global.playspace_height - ( global.lane_spacing * size_h )/2;
-}
+}*/
 
 image_xscale = ( global.lane_spacing * size_w )/sprite_width * choose( RIGHT, LEFT );
 image_yscale = ( global.lane_spacing * size_h )/sprite_height * choose( UP, DOWN );
@@ -44,7 +52,7 @@ image_speed = 0;
 image_index = irandom( image_number - 1 );
 h_speed = global.lvl_speed;
 y = lane( lane_pos );
-size = irandom_range( 32, 64 );
+size = 128;
 image_xscale = size/sprite_width * choose( RIGHT, LEFT );
 image_yscale = size/sprite_height * choose( UP, DOWN );
 
@@ -55,10 +63,10 @@ image_speed = 0;
 image_index = irandom( image_number - 1 );
 h_speed = global.lvl_speed;
 //wave properties
-wave_length = global.lane_spacing;
-wave_amplitude = global.lane_spacing/2;
+wave_length = global.lane_spacing * 3.5;
+wave_amplitude = global.lane_spacing;
 
-size = irandom_range( 32, 64 );
+size = 96;
 image_xscale = size/sprite_width * choose( RIGHT, LEFT );
 image_yscale = size/sprite_height * choose( UP, DOWN );
 

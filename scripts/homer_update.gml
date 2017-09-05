@@ -64,7 +64,7 @@ next_x = x + h_speed;
 if( next_x >= global.playspace_x && next_x <= global.playspace_x + global.playspace_width ) {
     x = next_x;
     global.top_lvl_speed = false;
-    obj_lvl_controller.spawn_timer = 20;
+    obj_lvl_controller.spawn_timer = 40;
 } else {
     if( next_x >= global.playspace_x + global.playspace_width ) {
         global.top_lvl_speed = true;

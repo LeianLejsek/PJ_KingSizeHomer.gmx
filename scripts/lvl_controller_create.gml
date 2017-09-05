@@ -10,8 +10,8 @@ global.current_lives = global.max_lives;
 global.max_boost_cells = 25;
 global.boost_cells = 0;
 
-max_rng_range = 100;
-rng_offset = 5;
+max_rng_range = 200;
+rng_offset = 10;
 spawn_timer = 10;
 initialize_rng_lane_values();
 
