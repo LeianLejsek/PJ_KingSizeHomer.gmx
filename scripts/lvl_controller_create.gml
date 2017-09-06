@@ -15,6 +15,11 @@ rng_offset = 10;
 spawn_timer = 10;
 initialize_rng_lane_values();
 
+global.total_time_sec = 180;
+time_min = floor( global.total_time_sec / 60 );
+time_sec = global.total_time_sec - time_min * 60;
+score_distance = 0;
+
 lives_sprite_width = global.gui_lives_width / global.max_lives;
 lives_sprite_height = global.gui_lives_height;
 lives_sprite_xscale = lives_sprite_width / 64;
@@ -24,5 +29,6 @@ lives_sprite_yscale = lives_sprite_height / 64;
 background_hspeed[ 0 ] = -global.lvl_speed/4;
 
 alarm[0] = 30;
+alarm[1] = room_speed;
 
 

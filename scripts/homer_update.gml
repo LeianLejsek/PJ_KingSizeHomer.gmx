@@ -25,6 +25,7 @@ if( impulse_vector == 1 ) {
                 global.boost_cells = 0;
                 current_max_boost = max_boost_original;
                 damage_meter = 0;
+                global.total_time_sec += 30;
             }
         }
         //Overheat;
