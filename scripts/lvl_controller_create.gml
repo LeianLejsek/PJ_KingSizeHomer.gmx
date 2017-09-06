@@ -15,7 +15,7 @@ rng_offset = 10;
 spawn_timer = 10;
 initialize_rng_lane_values();
 
-global.total_time_sec = 180;
+global.total_time_sec = 300;
 time_min = floor( global.total_time_sec / 60 );
 time_sec = global.total_time_sec - time_min * 60;
 score_distance = 0;

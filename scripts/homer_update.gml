@@ -69,7 +69,7 @@ if( next_x >= global.playspace_x && next_x <= global.playspace_x + global.playsp
 } else {
     if( next_x >= global.playspace_x + global.playspace_width ) {
         global.top_lvl_speed = true;
-        obj_lvl_controller.spawn_timer = 20;
+        obj_lvl_controller.spawn_timer = 15;
     }
 }
 
