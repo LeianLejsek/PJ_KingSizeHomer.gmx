@@ -25,6 +25,7 @@ if( impulse_vector == 1 ) {
                 global.boost_cells = 0;
                 current_max_boost = max_boost_original;
                 damage_meter = 0;
+                global.total_time_sec += 30;
             }
         }
         //Overheat;
@@ -68,7 +69,7 @@ if( next_x >= global.playspace_x && next_x <= global.playspace_x + global.playsp
 } else {
     if( next_x >= global.playspace_x + global.playspace_width ) {
         global.top_lvl_speed = true;
-        obj_lvl_controller.spawn_timer = 20;
+        obj_lvl_controller.spawn_timer = 15;
     }
 }
 

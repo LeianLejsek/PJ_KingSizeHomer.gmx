@@ -4,3 +4,4 @@ draw_set_colour( c_red );
 for( var i = 0; i < global.lanes; i++ ) {
     draw_text( 100 + 50 * i, 50, rng_range[ i ] );
 }
+draw_set_colour( c_black );

@@ -32,14 +32,6 @@ if( size_w == 2 ) {
 size_h = 2;
 
 y = lane( lane_pos ) + global.lane_spacing/2;
-/*//place top or bottom
-lane_pos = choose( UP, DOWN );
-
-if( lane_pos = UP ) {
-    y = global.playspace_y + ( global.lane_spacing * size_h )/2;
-} else {
-    y = global.playspace_y + global.playspace_height - ( global.lane_spacing * size_h )/2;
-}*/
 
 image_xscale = ( global.lane_spacing * size_w )/sprite_width * choose( RIGHT, LEFT );
 image_yscale = ( global.lane_spacing * size_h )/sprite_height * choose( UP, DOWN );
