@@ -22,7 +22,7 @@ damage_percentage = damage_meter / max_damage * 100;
 
 max_boost_original = 220;
 current_max_boost = max_boost_original;
-max_boost_increase_factor = 1.17;
+max_boost_increase_factor = 1.14;
 boost_increase_base = 25;
 augmented_boost_increase_initial_percentage = 20;
 boost_decrease = 2;

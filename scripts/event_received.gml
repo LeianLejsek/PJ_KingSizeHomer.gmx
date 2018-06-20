@@ -57,6 +57,7 @@ switch event {
         boost_meter -= current_max_boost / 2;
         if( boost_meter < 0 ) boost_meter = 0;
         global.total_time_sec -= 5;
+        if( global.total_time_sec < 0 ) global.total_time_sec = 0;
         update_time();
         h_speed = -global.lvl_speed;
         timer = 0;
